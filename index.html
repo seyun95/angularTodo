@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta Content-Type:text/html; charset="UTF-8" />
+    <!--    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css" />
+        <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body ng-app="todo" ng-controller="TodoCtrl">
+
+        <h1>Todo List</h1>
+
+        <ul class="list-unstyled">
+            <li ng-repeat="todo in todos">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="checkbox" ng-model="todo.completed">
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" ng-model="todo.title">
+                </div>
+                <date>{{ todo.createdAt | date: 'yyyy-MM-dd HH:mm:ss'}}</date>
+            </li>
+        </ul>
+    </body>
+</html>
